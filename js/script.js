@@ -18,6 +18,12 @@ let correctNumber = getRandomNumber();
 
 window.onload = function() {
     document.getElementById("number-submit").addEventListener("click", playGame);
+    document.getElementById("number-guess").addEventListener("keyup", function(e) {
+      if (e.code === "Enter") {
+        e.preventDefault();
+        document.getElementById("number-submit").click();
+      }
+    });
     document.getElementById("restart-game").addEventListener("click", initGame)
 }
 
